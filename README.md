@@ -1,125 +1,91 @@
-# Modern Portfolio Website
+# Portfolio Website
 
-A modern, responsive portfolio website showcasing my web development projects and skills. Built with HTML, CSS, and JavaScript, featuring smooth animations and interactive elements.
+A modern, responsive portfolio website built with HTML, CSS, and JavaScript. This project showcases my skills, projects, and provides a platform for potential clients to get in touch.
 
-![Portfolio Preview](images/portfolio-project.jpg)
+## Features
 
-## 🌟 Features
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI**: Clean and professional design with smooth animations
+- **Authentication**: User login and signup functionality
+- **Interactive Elements**: 
+  - Typing animation in hero section
+  - Smooth scrolling
+  - Modal forms
+  - Mobile-friendly navigation
+- **Project Showcase**: Grid layout for displaying projects with detailed information
+- **Contact Section**: Easy way for visitors to get in touch
+- **Social Integration**: Links to social media profiles
 
-### 📱 Responsive Navigation
-- Fixed position navbar with scroll effects
-- Smooth animations and transitions
-- Mobile-friendly design
-- Interactive search functionality
-- Glass-morphism effects
-
-### 🎨 Modern Design Elements
-- Clean and professional layout
-- Animated text and elements
-- Custom hover effects
-- Gradient color schemes
-- Optimized typography
-
-### 💼 Project Showcase
-- Interactive project cards
-- Detailed project descriptions
-- Technology tags
-- Image hover effects
-- Call-to-action buttons
-
-### 👤 About Section
-- Professional profile presentation
-- Contact information
-- Social media integration
-- Animated content sections
-
-### 🦶 Footer Section
-- Newsletter subscription
-- Quick links
-- Contact information
-- Social media links
-- Copyright information
-
-## 🚀 Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
-- JavaScript
-- Font Awesome Icons
-- Google Fonts
+- JavaScript (ES6+)
+- Font Awesome (for icons)
+- Shepherd.js (for guided tours)
 
-## 💻 Setup and Installation
+## Getting Started
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/portfolio-website.git
+git clone https://github.com/yourusername/portfolio.git
 ```
 
-2. Navigate to the project directory:
+2. Open the project directory:
 ```bash
-cd portfolio-website
+cd portfolio
 ```
 
-3. Open `index.html` in your preferred browser.
+3. Open `index.html` in your web browser to view the website.
 
-## 📱 Responsive Design
-
-The website is fully responsive and optimized for:
-- Desktop screens
-- Tablets
-- Mobile devices
-- Various screen sizes
-
-## 🎨 Color Scheme
-
-- Primary Color: `#0abf00` (Green)
-- Secondary Colors: 
-  - Dark: `#088f00`
-  - Light: `rgba(10, 191, 0, 0.1)`
-- Background: Linear gradients and glass effects
-- Text: Various shades of white and gray
-
-## 🔧 Customization
-
-1. **Colors**: Edit the CSS variables in `style.css`
-2. **Content**: Modify the HTML in `index.html`
-3. **Images**: Replace images in the `images` folder
-4. **Animations**: Adjust timing in `script.js`
-
-## 📄 Project Structure
+## Project Structure
 
 ```
-portfolio-website/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── images/
-    ├── ecommerce-project.jpg
-    ├── portfolio-project.jpg
-    ├── task-manager-project.jpg
-    └── profile-picture.jpg
+portfolio/
+├── index.html          # Main HTML file
+├── style.css           # Main stylesheet
+├── script.js           # JavaScript functionality
+├── images/             # Project images
+└── README.md           # Project documentation
 ```
 
-## 🤝 Contributing
+## Features in Detail
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](your-repo-link/issues).
+### Navigation
+- Responsive navbar with mobile menu
+- Search functionality
+- Authentication buttons (Login/Signup)
 
-## 📝 License
+### Main Section
+- Animated typing text
+- Call-to-action buttons
+- Technology stack showcase
+
+### Projects Section
+- Grid layout for projects
+- Project cards with images and descriptions
+- Technology tags for each project
+
+### About Section
+- Personal information
+- Contact details
+- Professional summary
+
+### Authentication
+- Login and Signup modals
+- Form validation
+- Social login options (Google, Facebook)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👤 Contact
+## Contact
 
-Arman Khan
-- Email: armankhan@gmail.com
-- Website: [Your Website](your-website-link)
+Arman Khan - [armankhan@gmail.com](mailto:armankhan@gmail.com)
 
-## 🌟 Acknowledgments
-
-- Font Awesome for icons
-- Unsplash for images
-- Google Fonts for typography
-
----
-Made with ❤️ by Arman Khan 
+Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio) 
