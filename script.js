@@ -37,134 +37,6 @@ let letter = '';
     }
 })();
 
-// Initialize the tour
-const tour = new Shepherd.Tour({
-    useModalOverlay: true,
-    defaultStepOptions: {
-        classes: 'shepherd-theme-custom',
-        scrollTo: true,
-        cancelIcon: {
-            enabled: true
-        }
-    }
-});
-
-// Add tour steps
-tour.addStep({
-    id: 'welcome',
-    text: 'Welcome to my portfolio! Let me show you around.',
-    attachTo: {
-        element: '.logo',
-        on: 'bottom'
-    },
-    buttons: [
-        {
-            text: 'Next',
-            action: tour.next
-        }
-    ]
-});
-
-tour.addStep({
-    id: 'navigation',
-    text: 'Use these navigation links to explore different sections of my portfolio.',
-    attachTo: {
-        element: '.nav-links',
-        on: 'bottom'
-    },
-    buttons: [
-        {
-            text: 'Back',
-            action: tour.back
-        },
-        {
-            text: 'Next',
-            action: tour.next
-        }
-    ]
-});
-
-tour.addStep({
-    id: 'search',
-    text: 'Looking for something specific? Use the search bar to find it quickly.',
-    attachTo: {
-        element: '.search-bar',
-        on: 'bottom'
-    },
-    buttons: [
-        {
-            text: 'Back',
-            action: tour.back
-        },
-        {
-            text: 'Next',
-            action: tour.next
-        }
-    ]
-});
-
-tour.addStep({
-    id: 'projects',
-    text: 'Here you can explore my latest projects and see my work in action.',
-    attachTo: {
-        element: '.projects',
-        on: 'top'
-    },
-    buttons: [
-        {
-            text: 'Back',
-            action: tour.back
-        },
-        {
-            text: 'Next',
-            action: tour.next
-        }
-    ]
-});
-
-tour.addStep({
-    id: 'about',
-    text: 'Learn more about me, my skills, and my experience in the About section.',
-    attachTo: {
-        element: '.about',
-        on: 'top'
-    },
-    buttons: [
-        {
-            text: 'Back',
-            action: tour.back
-        },
-        {
-            text: 'Next',
-            action: tour.next
-        }
-    ]
-});
-
-tour.addStep({
-    id: 'contact',
-    text: 'Feel free to reach out to me through the contact information in the footer.',
-    attachTo: {
-        element: '.footer',
-        on: 'top'
-    },
-    buttons: [
-        {
-            text: 'Back',
-            action: tour.back
-        },
-        {
-            text: 'Finish',
-            action: tour.complete
-        }
-    ]
-});
-
-// Start tour when button is clicked
-document.getElementById('start-tour').addEventListener('click', () => {
-    tour.start();
-});
-
 // Modal functionality
 const loginModal = document.getElementById('login-modal');
 const signupModal = document.getElementById('signup-modal');
@@ -364,4 +236,65 @@ document.querySelectorAll('.social-btn').forEach(button => {
         console.log(`${platform} login clicked`);
         // Here you would implement the social login functionality
     });
+});
+
+// Add mobile menu button to HTML
+document.querySelector('.navbar').insertAdjacentHTML('afterbegin', `
+    <button class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+`);
+
+// Mobile menu functionality
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+const body = document.body;
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+    
+    // Toggle menu icon
+    const icon = menuBtn.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && 
+        !menuBtn.contains(e.target) && 
+        navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuBtn.querySelector('i').classList.remove('fa-times');
+        menuBtn.querySelector('i').classList.add('fa-bars');
+    }
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+            menuBtn.querySelector('i').classList.add('fa-bars');
+        }
+    });
+});
+
+// Close mobile menu when window is resized above mobile breakpoint
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuBtn.querySelector('i').classList.remove('fa-times');
+        menuBtn.querySelector('i').classList.add('fa-bars');
+    }
 }); 
